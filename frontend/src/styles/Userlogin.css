@@ -1,0 +1,30 @@
+.userLogin{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+
+.userLogin Form{
+    border: 20px 50px;
+    background-image: url("https://th.bing.com/th/id/OIP.m01MzXgBcqvBjKAEnh-TKwHaE8?pid=ImgDet&w=200&h=133&c=7&dpr=1.5");
+    /* background-position: 100vh; */
+    background-repeat: none;
+    background-size: cover;
+    box-shadow: 0px 0px 10px black;
+    padding: 20px 40px;
+}
+
+.userLogin a{
+    text-decoration: none;
+    color: aliceblue;
+}
+.userLogin Form:hover{
+    transition: .5s;
+    transform: scale(1.2);
+}
+
+.userLogin h4{
+    text-align: center;
+}

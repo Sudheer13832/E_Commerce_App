@@ -1,0 +1,68 @@
+.landingPage{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    position: relative;
+    background-color: rgb(85, 87, 85);
+
+}
+.landingPage img{
+    height: 200px;
+    width: 200px;
+    margin: 10px 30px;
+    
+}
+.landingPage img:hover{
+    transform: scale(1.2);
+}
+.landingPage a{
+    flex-basis: 15%;
+    text-align: center;
+    text-decoration: none;
+     font-weight: 900;
+     font-family: cursive;
+    font-size: larger;
+}
+
+nav{
+    height: 30%;
+    background-color: rgba(201, 137, 121, 0.795);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+nav .logo h1{
+    color: papayawhip;
+    -webkit-text-stroke: 2px;
+    
+}
+nav a{
+    text-decoration: none;
+    color: aliceblue;
+}
+
+.update-merchant form{
+  
+    display: grid;
+    grid-template-columns: 200px 200px;
+    box-shadow: 0px 0px 30px black;
+    border-radius: 15px;
+    padding: 30px 50px;
+  }
+  .update-merchant{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 80vh;
+  }
+  
+  .update-merchant input,label{
+      font-family: cursive;
+      border: none;
+      margin: 10px;
+  }
+  .update-merchant input{
+     outline: none;
+     border-bottom: 2px solid gray; 
+  }
