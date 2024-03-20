@@ -56,6 +56,12 @@ public class MerchantService {
 		Optional<Merchant> recMerchant = merchantDao.verifyMerchant(phone, password);
 		if (recMerchant.isPresent()) {
 			structure.setBody(recMerchant.get());
+			Merchant merchant = recMerchant.get();
+			if (merchant.getStatus().equals(AccountStatus.IN_ACTIVE.toString())) {
+				throw new IllegalStateException("Account is Not Activated");
+			}
+			structure.setBody(merchant);
+			//			structure.setBody(recMerchant.get());
 			structure.setMessage("Merchant Found");
 			structure.setStatusCode(HttpStatus.OK.value());
 			return new ResponseEntity<ResponseStructure<Merchant>>(structure, HttpStatus.OK);
@@ -70,9 +76,17 @@ public class MerchantService {
 			structure.setBody(recMerchant.get());
 			structure.setMessage("Merchant Found");
 			structure.setStatusCode(HttpStatus.OK.value());
+//			structure.setBody(recMerchant.get());
+//			Merchant merchant = recMerchant.get();
+//			if (merchant.getStatus().equals(AccountStatus.IN_ACTIVE.toString())) {
+//				throw new IllegalStateException("Account is Not Activated");
+//			}
+//			structure.setBody(merchant);
+//			structure.setMessage("Merchant Found");
+//			structure.setStatusCode(HttpStatus.OK.value());
 			return new ResponseEntity<ResponseStructure<Merchant>>(structure, HttpStatus.OK);
 		}
-		throw new MerchantNotFoundException("Invalid Phone Number or password");
+		throw new MerchantNotFoundException("Invalid Email Id or password");
 	}
 
 	public ResponseEntity<ResponseStructure<String>> activate(String token) {

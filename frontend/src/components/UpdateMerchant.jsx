@@ -1,5 +1,6 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
+
 const UpdateMerchant = () => {
     let [id,setid]=useState()
     let [name,setname]=useState("")
@@ -10,15 +11,15 @@ const UpdateMerchant = () => {
 
     let data={id,name,email,gst_number,phone,password}
     let merchant=JSON.parse(localStorage.getItem("Merchant"))
-
-    useEffect(()=>{
-        setid(merchant.id)
-        setname(merchant.name)
-        setemail(merchant.email)
-        setgst_number(merchant.gst_number)
-        setphone(merchant.phone)
-        setpassword(merchant.setpassword)
-    },[])
+    // console.log(merchant.id);
+    // useEffect(()=>{
+    //     // setid(merchant.id)
+    //     setname(merchant.name)
+    //     setemail(merchant.email)
+    //     setgst_number(merchant.gst_number)
+    //     setphone(merchant.phone)
+    //     setpassword(merchant.setpassword)
+    // },[])
 
     let updateData = (e)=>{
         e.preventDefault();
@@ -28,6 +29,7 @@ const UpdateMerchant = () => {
                 alert("Data Edited succesfull")
             })
             .catch((res)=>{
+                
                 console.log(res);
                 alert("Data Not Found")
             })

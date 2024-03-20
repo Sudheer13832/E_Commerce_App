@@ -39,4 +39,8 @@ public class ProductDao {
 		return productRepository.findByMerchantId(id);
 	}
 	
+	public List<Product> findByName(String name) {
+		return productRepository.findByCategory(name);
+	}
+	
 }

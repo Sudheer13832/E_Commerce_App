@@ -1,8 +1,9 @@
-import { Link, Route, Routes, useNavigate } from "react-router-dom";
+import {  Route, Routes, useNavigate } from "react-router-dom";
 import "../styles/MerchantHomePage.css"
 import MerchantsNavBar from "./MerchantsNavBar";
 import ProductView from "./ProductView";
 import UpdateMerchant from "./UpdateMerchant";
+import AddProduct from "./AddProduct";
 
 const MerchantHomePage = () => {
     // let navigate=useNavigate()
@@ -22,6 +23,7 @@ const MerchantHomePage = () => {
             <Routes>
                 <Route path="/product-view" element={<ProductView/>}/>
                 <Route path="/update-merchant" element={<UpdateMerchant/>}/>
+                <Route path="/AddProduct" element={<AddProduct/>}/>
             </Routes>
         </div>
      );
