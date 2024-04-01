@@ -10,7 +10,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public class ProductDao {
-
 	@Autowired
 	private ProductRepository productRepository;
 
@@ -18,29 +17,31 @@ public class ProductDao {
 		return productRepository.save(product);
 	}
 
-	public List<Product> findAll() {
-		return productRepository.findAll();
-	}
-
 	public Optional<Product> findById(int id) {
 		return productRepository.findById(id);
 	}
 
-	
+	public List<Product> findAll() {
+		return productRepository.findAll();
+	}
+
 	public List<Product> findByBrand(String brand) {
 		return productRepository.findByBrand(brand);
 	}
-	
-	public List<Product> findByCategory(String category){
-		return productRepository.findByCategory(category);
-	}
-	
+
 	public List<Product> findByMerchantId(int id) {
 		return productRepository.findByMerchantId(id);
 	}
-	
+
+	public List<Product> findByCategory(String category) {
+		return productRepository.findByCategory(category);
+	}
+
 	public List<Product> findByName(String name) {
 		return productRepository.findByCategory(name);
 	}
-	
+
+	public void delete(int id) {
+		productRepository.deleteById(id);
+	}
 }

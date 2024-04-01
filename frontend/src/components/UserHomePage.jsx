@@ -1,11 +1,23 @@
-import "../styles/UserHomePage.css"
-const UserHomePage = () => {
-    return ( 
-        <div className="uhp">
-            <button className="btn btn-danger">Place Order</button>
-            <button className="btn btn-success">View Orders</button>
+import React from 'react'
+import { Routes,Route } from 'react-router-dom'
+import UpdateUser from './UpdateUser'
+import UserProduct from './UserProduct'
+import UserNavbar from './UserNavbar'
+import UserLocation from './UserLocation'
+import ReadContent from './ReadContent'
+function UserHomePage() {
+    return (
+        <div className="userhompage">
+            <UserNavbar/>
+        <Routes>
+            <Route path='/' element={<UserProduct/>}/>
+            <Route path="/updateuser" element={<UpdateUser/>}/>
+            <Route path='/addAdress' element={<UserLocation/>}/>
+            <Route path='/readData/:id' element={<ReadContent/>}/>
+            
+
+        </Routes>
         </div>
-     );
+    )
 }
- 
-export default UserHomePage;
+export default UserHomePage

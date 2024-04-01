@@ -1,32 +1,24 @@
-import {  Route, Routes, useNavigate } from "react-router-dom";
-import "../styles/MerchantHomePage.css"
-import MerchantsNavBar from "./MerchantsNavBar";
+import { Route, Routes } from "react-router-dom";
+import MerchantNavabr from "./MerchantNavabr";
 import ProductView from "./ProductView";
 import UpdateMerchant from "./UpdateMerchant";
-import AddProduct from "./AddProduct";
+import AddProducts from "./AddProducts";
+import UpdateProducts from "./UpdateProducts";
+import ReadContent from "./ReadContent";
 
-const MerchantHomePage = () => {
-    // let navigate=useNavigate()
-    // function addProducts(e) {
-    //     e.preventDefault()
-    //     navigate("/add-products") 
-    // }
-
-    // function UpdateProducts(e) {
-    //     e.preventDefault()
-    //     navigate("/update-products")
-        
-    // }
-    return ( 
-        <div className="merchantHomePage">
-            <MerchantsNavBar/>
-            <Routes>
-                <Route path="/product-view" element={<ProductView/>}/>
-                <Route path="/update-merchant" element={<UpdateMerchant/>}/>
-                <Route path="/AddProduct" element={<AddProduct/>}/>
-            </Routes>
+const MechantHomePage = () => {
+    return (
+        <div className="mhp">
+            <MerchantNavabr/>
+           <Routes>
+            <Route path="/productview" element={<ProductView/>}/>
+            <Route path="/updatemerchant" element={<UpdateMerchant/>}/>
+            <Route path="/addproduts" element={<AddProducts/>}/>
+            <Route path="/updateproduct/:id" element={<UpdateProducts/>}/>
+            <Route path='readData/:id' element={<ReadContent/>}/>
+           </Routes>
         </div>
-     );
+      );
 }
  
-export default MerchantHomePage;
+export default MechantHomePage;

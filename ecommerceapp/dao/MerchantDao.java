@@ -9,7 +9,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public class MerchantDao {
-	
 	@Autowired
 	private MerchantRepository merchantRepository;
 
@@ -31,14 +30,5 @@ public class MerchantDao {
 
 	public Optional<Merchant> findByToken(String token) {
 		return merchantRepository.findByToken(token);
-	}
-
-	public boolean deleteById(int id) {
-		Optional<Merchant> recMerchant = findById(id);
-		if (recMerchant.isPresent()) {
-			merchantRepository.delete(recMerchant.get());
-			return true;
-		}
-		return false;
 	}
 }

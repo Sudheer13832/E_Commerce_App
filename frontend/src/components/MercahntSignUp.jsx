@@ -1,8 +1,7 @@
-import React from 'react'
-import "../styles/UserSignUp.css"
-import axios from 'axios'
 import { useState } from 'react'
-function UserSignUp() {
+import '../styles/MerchantSignup.css'
+import axios from 'axios'
+function MercahntSignUp() {
     let [name,setname] = useState("")
     let [email,setemail] = useState("")
     let [gst_number,setgst] = useState("")
@@ -10,10 +9,10 @@ function UserSignUp() {
     let [password,setpassword] = useState("")
 
     let data = {name,email,gst_number,phone,password}
-    
-    let adduser = (e) =>{
+
+    let addMerchant = (e) =>{
         e.preventDefault();
-        axios.post('http://localhost:8080/user',data)
+        axios.post('http://localhost:8080/merchants',data)
         .then((res)=>{
             console.log(res);
             alert("Data Added succesfull")
@@ -24,8 +23,8 @@ function UserSignUp() {
         })
     }
     return (
-        <div className="usersignup">
-        <form onSubmit={adduser} action="">
+        <div className="merchantsignup">
+            <form onSubmit={addMerchant} action="">
                 <label htmlFor="">Name</label>
                 <input required value={name} onChange={(e)=>{setname(e.target.value)}} type="text" placeholder="Enter the Name"  />
                 <label htmlFor="">GST_number</label>
@@ -41,4 +40,4 @@ function UserSignUp() {
         </div>
     )
 }
-export default UserSignUp
+export default MercahntSignUp

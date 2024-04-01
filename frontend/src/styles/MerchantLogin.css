@@ -1,34 +1,11 @@
-.merchantLogin{
-    height: 100vh;
+.MerchantLogin{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: black;
+    height: 80vh;
 }
-.merchantLogin Form{
-    box-shadow: 0px 0px 20px silver;
-    background-image: url("https://th.bing.com/th/id/OIP.xNoYcQtvqLjz-yT3klxnxgAAAA?pid=ImgDet&w=200&h=169&c=7&dpr=1.5");
-    background-position: 100vh;
-    background-size: cover;
-    background-repeat: none;
-    padding: 40px 40px;
-    border-radius: 10px;
-}
-.merchantLogin input{
-    color: black;
-    /* font-weight: bold; */
-}
-.merchantLogin Form:hover{
-    transform: scale(1.1);
-    transition: .5s;
-}
-.merchantLogin h4{
-    text-align: center;
-    color:black;
-    font-family: cursive;
-}
-
-.merchantLogin a{
-    text-decoration: none;
-    color: white;
+.MerchantLogin Form{
+    box-shadow: 0px 0px 10px black;
+    border-radius: 20px;
+    padding: 20px 50px;
 }

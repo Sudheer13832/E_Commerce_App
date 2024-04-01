@@ -1,12 +1,12 @@
 package org.jsp.ecommerceapp.exception;
 
-public class ProductNotFoundException extends RuntimeException {
+public class AddressNotFoundException extends RuntimeException {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public ProductNotFoundException(String message) {
+	public AddressNotFoundException(String message) {
 		super(message);
 	}
 }

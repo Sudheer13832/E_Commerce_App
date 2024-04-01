@@ -19,18 +19,17 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Product {
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	@Column(nullable=false)
-	private String name,brand,category,description;
-	@Column(nullable=false)
+	@Column(nullable = false)
+	private String name, brand, category, description;
+	@Column(nullable = false)
 	private double cost;
-	@Column(nullable=false)
+	@Column(nullable = false)
 	private String image_url;
 	@ManyToOne
 	@JsonIgnore
 	@JoinColumn
 	private Merchant merchant;
-	
 
 }

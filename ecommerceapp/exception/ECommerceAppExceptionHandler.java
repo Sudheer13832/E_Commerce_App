@@ -35,11 +35,20 @@ public class ECommerceAppExceptionHandler extends ResponseEntityExceptionHandler
 		structure.setStatusCode(HttpStatus.NOT_FOUND.value());
 		return new ResponseEntity<ResponseStructure<String>>(structure, HttpStatus.NOT_FOUND);
 	}
-	
+
 	@ExceptionHandler(IllegalStateException.class)
 	public ResponseEntity<ResponseStructure<String>> handleISE(IllegalStateException exception) {
 		ResponseStructure<String> structure = new ResponseStructure<>();
 		structure.setBody("Activate Your Account to SignIn");
+		structure.setMessage(exception.getMessage());
+		structure.setStatusCode(HttpStatus.NOT_FOUND.value());
+		return new ResponseEntity<ResponseStructure<String>>(structure, HttpStatus.NOT_FOUND);
+	}
+
+	@ExceptionHandler(IllegalArgumentException.class)
+	public ResponseEntity<ResponseStructure<String>> handleIAE(IllegalArgumentException exception) {
+		ResponseStructure<String> structure = new ResponseStructure<>();
+		structure.setBody("Invalid Id");
 		structure.setMessage(exception.getMessage());
 		structure.setStatusCode(HttpStatus.NOT_FOUND.value());
 		return new ResponseEntity<ResponseStructure<String>>(structure, HttpStatus.NOT_FOUND);

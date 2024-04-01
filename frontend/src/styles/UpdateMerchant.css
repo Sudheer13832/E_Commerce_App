@@ -1,4 +1,4 @@
-.usersignup form{
+.merchantedit form{
     display: grid;
     grid-template-columns: 200px 200px;
     box-shadow: 0px 0px 10px grey;
@@ -6,17 +6,17 @@
     border-radius: 10px;
     font-family: cursive;
 }
-.usersignup{
+.merchantedit{
     display: flex;
     align-items: center;
     justify-content: center;
     height: 80vh;
 }
-.usersignup input,label{
+.merchantedit input,label{
     margin: 10px 0px;
     border: none;
 }
-.usersignup input{
+.merchantedit input{
     outline: none;
     border-bottom: 2px solid black;
 
